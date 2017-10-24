@@ -1,7 +1,7 @@
 # 页面优化
 优化项目中使用了常见的优化方式，比如页面的脚本加载顺序，以及影响FSL等的因素做了一些处理，具体优化部分段进行描述。
 ## Index.html页面的优化
-1.index.html的访问路径为：[index.html](https://pages.github.com/)
+1.index.html的访问路径为：[index.html](https://chensdog.github.io/chenchao/p2/index.html)
 2.优化内容说明：
    - 将字体文件`//fonts.googleapis.com/css?family=Open+Sans:400,700`移动到页面`body`底部，由于字体文件的加载对于页面显示内容影响并不是非常大，因此将字体会将放到页面底部，先加载页面内容进行解析
    - 将`js`文件的加载变为`async`
@@ -17,7 +17,7 @@
    将页面中静态资源文件进行压缩，例如其中`views/images/pizzeria.jpg`的压缩可以由大于`2MB`变为`4kb`左右的文件
    - 将`css`文件内容迁移到`html`中，由于`css`一部分文件并不是很多，所以可以嵌入到页面`<style>`标签中
 ## pizza.html页面的优化
-1.执行路径为:[index.html](https://pages.github.com/)
+1.执行路径为:[pizza.html](https://chensdog.github.io/chenchao/p2/views/pizza.html)
 2.优化的方法
    - 滑块的移动调整图片大小尺寸完成小于`5ms`
 将main.js中进行计算的逻辑变为样式的`%`，从而取代影响FSL的`px`，并且尽量减少循环中`document.getXX`或者`document.queryXX`的使用，将通过`document`获取到的内容缓存到`局部变量`，在循环中操作局部变量，优化代码如下：
